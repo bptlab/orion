@@ -8,3 +8,8 @@ The easiest way to setup orion is to use [docker](https://hub.docker.com/r/jcrem
 ```docker pull jcremerius/orion:latest``` and run it by executing ```docker run -p 8000:8000 -it jcremerius/orion:latest /bin/bash```. After that, a docker container is created and shall run. The application can be accessed via a webbrowser under the following address [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 
+## Conda Setup
+
+
+
+## Tool Usage + Video
