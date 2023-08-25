@@ -18,7 +18,7 @@ The tool can be used with any event log, provided as a .csv file. Please be awar
 
 A demonstration of the tool on a healthcare dataset, extracted from MIMIC-IV can be viewed via the following link: [https://www.youtube.com/watch?v=CIwaCuSN03s](https://www.youtube.com/watch?v=CIwaCuSN03s). The dataset was also used by us for evaluating the research contributions.
 
-Further, a demonstration on the Sepsis event log can be found here: 
+Further, a demonstration on the Sepsis event log can be found [here](https://github.com/bptlab/orion/tree/master/Demonstration/Sepsis): 
 
 
 ## Source Code
