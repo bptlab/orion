@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Pattern Analysis</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+<!-- CSS CUSTOM -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body class="standard-background">
+<form name="mandatory_attribute_selection_form" action="set_mandatory_attributes" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+<div class="row">
+
+    <div class="col-md-3 center">
+        <label class="label label-default" for="case_dropdown"><h4>Select Case ID column</h4></label>
+        <select class="form-select" name="case_dropdown" id="case_dropdown">
+            {% for col in columns %}
+            <option value="{{col}}">{{col}}</option>
+            {% endfor %}
+          </select>
+    </div>
+    <div class="col-md-3 center">
+        <label class="label label-default" for="activity_dropdown"><h4>Select Activity column</h4></label>
+        <select class="form-select" name="activity_dropdown" id="time_dropdown">
+            {% for col in columns %}
+            <option value="{{col}}">{{col}}</option>
+            {% endfor %}
+        </select>
+        <div class="p-2 center" >
+            <input type = "submit" class="btn btn-primary" value = "Set mandatory attribtues" name = "Set mandatory attributes" id ='set_mandatory_attributes' />
+        </div>
+    </div>
+    <div class="col-md-3 center">
+        <label class="label label-default" for="timestamp_dropdown"><h4>Select Timestamp column</h4></label>
+        <select class="form-select" name="timestamp_dropdown" id="timestamp_dropdown">
+            {% for col in columns %}
+            <option value="{{col}}">{{col}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-3 center">
+        <label class="label label-default" for="columns_to_drop"><h4>Select irrelevant attributes</h4></label>
+        <ul class="left list-group" id="columns_to_drop">
+            {% for col in columns %}
+            <li id={{col}} class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" value="{{col}}" name="columns_to_drop">
+            {{col}}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+    </form>
+
+
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Log Upload</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <!-- CSS CUSTOM -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body class="standard-background">
+
+
+
+<div class="d-flex p-5 justify-content-center">
+
+    <form name="load" action="upload_eventlog" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-5">
+            <label for="formFile" class="form-label d-flex justify-content-center">Please select your event log</label>
+            <input class="form-control" type="file" id="formFile" name="event_log" value="fileupload">         
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type = "submit" class="btn btn-primary" value = "Upload EventLog" name = "uploadButton" id ='submitresEL' />
+        </div>
+
+    </form>
+</div>
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

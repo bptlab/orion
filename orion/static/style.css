@@ -1,0 +1,84 @@
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.half-page {
+    height: 50vh;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+    background-color: rgb(253, 126, 20);
+    border-color: rgb(253, 126, 20);
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background-color: red;
+    border-color: red;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(253, 126, 20);
+}
+
+.topbar {
+    height: 5vh;
+    background-color: gray;
+}
+
+.header-font {
+    font-size: 30px;
+    font-family: Arial;
+    color: white;
+}
+
+.provider-font {
+    font-family: Arial;
+    color: white;
+    text-align: right;
+}
+
+.form-check-input:checked {
+    background-color: rgb(253, 126, 20);
+    border-color: rgb(253, 126, 20);
+    box-shadow: none;
+}
+
+a {
+    color: white;
+}
+
+.lampe {
+    object-fit: contain;
+    height: 5vh;
+    width: 5vh;
+}
+
+.standard-background {
+    background-color: #f5f5f5;
+}
+
+.full-height {
+    height:100%;
+}
+
+.navbar {
+    border-left: solid grey;
+    border-bottom: solid grey;
+    display: block;
+}
+
+.full-vh {
+    height:100vh;
+}

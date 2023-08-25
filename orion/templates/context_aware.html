@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Context-Aware Activity Transformation</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+<!-- CSS CUSTOM -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body class="standard-background">
+ 
+
+
+<div class="row">
+    <div class="col-md-3 center">
+       
+        <form name="recurring_activities_form" action="set_recurring_activities" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="label label-default" for="activity_list"><h4>Select recurring activities</h4></label>
+            <ul class="left list-group" id="activity_list">
+                {% for activity in activity_list %}
+                <li id={{activity}} class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="{{activity}}" name="activity_list">
+                {{activity}}
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="p-2" >
+                <input type = "submit" class="btn btn-primary" value = "Set recurring activities" name = "Set Recurring Activities" id ='set_recurring_act_button' />
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="col-md-9 center" >
+        {% if show_context_identification == True %}
+        <form name="update_context_slider" action="update_context_slider" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        <label class="form-label" for="context_threshold_slider">Set frequency threshold for contexts of interest: <span id="demo"></span></label>
+        <div class="range">
+        <input type="range" class="form-range" min="0" max="1" step= "0.01" value={{slider_value}} id="context_threshold_slider" name="context_threshold_slider"/>
+        </div>
+        <input type = "submit" class="btn btn-primary" value = "Update context allocation" name = "Update context allocation" id ='update_slider_value' />
+        </form>
+        <form name="remove_context_from_activity_form" action="remove_context_from_activity" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        {% for rec_act in rec_acts %}
+        <div class="row">
+            <div class="col-md-6 center">
+
+                
+
+
+                    <label class="label label-default" for="mapping_before_list_{{rec_act}}"><h5>{{rec_act}} occurring frequently BEFORE activities below</h4></label>
+                    <ul class="left list-group" id="mapping_before_list_{{rec_act}}">
+                        {% for act_before in mapping_before|get_item:rec_act %}
+                        <li id={{act_before}} class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="{{act_before}}" name="mapping_before_list_{{rec_act}}">
+                        {{act_before}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                <div class="col-md-6 center">
+                    <label class="label label-default" for="mapping_after_list_{{rec_act}}"><h5>{{rec_act}} occurring frequently AFTER activities below</h4></label>
+                    <ul class="left list-group" id="mapping_after_list_{{rec_act}}">
+                        {% for act_after in mapping_after|get_item:rec_act %}
+                        <li id={{act_after}} class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="{{act_after}}" name="mapping_after_list_{{rec_act}}">
+                        {{act_after}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+
+
+
+            </div>
+        </div>
+        {% endfor %}
+        
+        <div class="p-2" >
+            <input type = "submit" class="btn btn-primary" value = "Remove Context from Activity" name = "Remove Context from Activity" id ='remove_context_from_activity_button' />
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    
+    
+</div>
+<div class="row">
+    <form name="context_done_form" action="conclude_context_aware_activities" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="p-2" >
+            <input type = "submit" class="btn btn-primary" value = "Transform" name = "Conclude context aware detection" id ='conclude_context_aware_activities_button' />
+        </div>
+</div>
+
+
+<script>
+    var slider = document.getElementById("context_threshold_slider");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
+
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Context-Aware Activity Transformation</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+<!-- CSS CUSTOM -->
+<!-- add distribution of event attributes  -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body class="standard-background">
+ 
+<div class="row">
+    <div class="col-md-3 center">
+  
+        <label class="label label-default" for="dynamic_list"><h4>Dynamic Event Attributes</h4></label>
+        <ul class="list-group" id="dynamic_list" name="dynamic_list">
+        {% for attribute in dynamic_list %}
+        <li class="list-group-item">{{attribute}}</li>
+        {% endfor %}
+        </ul> 
+        <form name="con_cat_classification_form" action="classify_data_type" method = "POST" enctype="multipart/form-data">    
+            {% csrf_token %}
+            <label class="form-label" for="con_cat_threshold_slider">Set threshold for data type classification: <span id="demo"></span></label>
+            <div class="range">
+            <input type="range" class="form-range" min="0" max="0.1" step= "0.005" value={{slider_value}} id="con_cat_threshold_slider" name="con_cat_slider_value"/>
+            </div>
+            <input type = "submit" class="btn btn-primary" value = "Classify Attribute Data Type" name = "Classify Data Type Button" id ='classify_data_type_button' />
+        </form>
+    </div>
+
+
+
+
+    <div class="col-md-6 center">
+        {% if show_con_cat == True %}
+        <form name="con_cat_switch_form" action="switch_data_type" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="label label-default" for="con_list"><h4>Continuous Event Attributes</h4></label>
+            <ul class="left list-group" id="con_list">
+                {% for attribute_con in attribute_list_con %}
+                <li id={{attribute_con}} class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="{{attribute_con}}" name="con_list">
+                {{attribute_con}}
+                </li>
+                {% endfor %}
+            </ul>
+
+            <label class="label label-default" for="cat_list"><h4>Categorical Event Attributes</h4></label>
+            <ul class="left list-group" id="cat_list">
+                {% for attribute_cat in attribute_list_cat %}
+                <li id={{attribute_cat}} class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="{{attribute_cat}}" name="cat_list">
+                {{attribute_cat}}
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="p-2" >
+            <input type = "submit" class="btn btn-primary" value = "Switch Attribute Type" name = "Switch Attribute Type" id ='switch_data_type_button' />
+            </div>
+        </form>
+        {% endif %}
+    </div>
+
+</div>
+<div class="row">
+    <form name="dynamic_done_form" action="conclude_dynamic_attribute_detection" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="p-2" >
+            <input type = "submit" class="btn btn-primary" value = "Set attribute type" name = "Conclude dynamic detection button" id ='conclude_dynamic_attribute_detection_button' />
+        </div>
+</div>
+
+<script>
+    var slider = document.getElementById("con_cat_threshold_slider");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
+
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

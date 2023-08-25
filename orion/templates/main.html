@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Pattern Analysis</title>
+  {% load bootstrap5 %}
+  {%load plotly_dash%}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+<!-- CSS CUSTOM -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body class="standard-background">
+
+<div class="row topbar">
+    <div class="col-md-4 center">
+
+    </div>
+    <div class="col-md-4 center header-font">
+        Orion
+    </div>
+
+    <div class="col-md-4 provider-font">
+        provided by BPT@HPI <a href="https://bpt.hpi.uni-potsdam.de/" target="_blank">(Visit us)</a>
+        <img class="lampe" src="media/lampe.png" alt="img">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-9 center">
+            {% if show_change_patterns != True %}
+            <img class="half-page" src="media/process_model.png" alt="img">
+            {% endif %}
+            {% if show_change_patterns == True %}
+            <div class="row half-page">
+                {%plotly_app name="change_pattern_matrix" ratio=1  %}
+            </div>
+            {% endif %}
+    </div>
+
+    <div class="col-md-3 navbar">
+        <form name="dynamic_attribute_form" action="detect_dynamic_event_attributes" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="p-2">
+                <input type = "submit" class="btn btn-primary" value = "Detect Dynamic Event Attributes" name = "Dynamic Attribute Button" id ='dynamic_attribute_button' />
+            </div>
+        </form>
+        
+        <form name="context_form" action="detect_context_aware_activities" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="p-2">
+                <input type = "submit" class="btn btn-primary" value = "Apply Context-Aware Activity Transformation" name = "Context Aware Button" id ='context_aware_button' />
+            </div>
+        </form>
+    
+        <form name="change_detection_form" action="detect_change_patterns" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class=p-2>
+                <input type = "submit" class="btn btn-primary" value = "Detect Change Patterns" name = "Change Pattern Button" id ='change_pattern_button' />
+            </div>
+        </form>
+
+        <form name="relationship_form" action="detect_relationships" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class=p-2>
+                <input type = "submit" class="btn btn-primary" value = "Detect Relationships between Change Patterns" name = "Relationship Button" id ='relationship_button' />
+            </div>
+        </form>
+
+        <form name="change_pattern_exploration_form" action="explore_change_patterns" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class=p-2>
+                <input type = "submit" class="btn btn-primary" value = "Explore Change Patterns" name = "Explore Change Pattern Button" id ='explore_change_pattern_button' />
+            </div>
+        </form>
+
+        <form name="update_pm_slider" action="update_pm_slider" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="form-label" for="act_threshold_slider">Activity threshold: <span id="act_slider"></span></label>
+            <div class="range">
+                <input type="range" class="form-range" min="0" max="1" step= "0.01" value={{act_slider_value}} id="act_threshold_slider" name="act_threshold_slider"/>
+            </div>
+            <label class="form-label" for="path_threshold_slider">Path threshold: <span id="path_slider"></span></label>
+            <div class="range">
+                <input type="range" class="form-range" min="0" max="1" step= "0.01" value={{path_slider_value}} id="path_threshold_slider" name="path_threshold_slider"/>
+            </div>
+            <input type = "submit" class="btn btn-primary" value = "Apply filter" name = "Apply filter" id ='update_pm_slider_value' />
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    if ("{{dynamic_event_attribute_button_enabled}}" === "True") {
+        document.getElementById("dynamic_attribute_button").disabled = false;
+    }
+    else {
+        document.getElementById("dynamic_attribute_button").disabled = false;
+    }
+    if ("{{context_aware_button_enabled}}" === "True") {
+        document.getElementById("context_aware_button").disabled = false;
+    }
+    else {
+        document.getElementById("context_aware_button").disabled = false;
+    }
+    var act_slider = document.getElementById("act_threshold_slider");
+    var act_output = document.getElementById("act_slider");
+    act_output.innerHTML = act_slider.value;
+    
+    act_slider.oninput = function() {
+        act_output.innerHTML = this.value;
+    }
+    var path_slider = document.getElementById("path_threshold_slider");
+    var path_output = document.getElementById("path_slider");
+    path_output.innerHTML = path_slider.value;
+    
+    path_slider.oninput = function() {
+        path_output.innerHTML = this.value;
+    }
+
+</script>
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
