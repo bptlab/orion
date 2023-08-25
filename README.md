@@ -8,8 +8,8 @@ The easiest way to setup orion is to use [docker](https://hub.docker.com/r/jcrem
 ```docker pull jcremerius/orion:latest``` and run it by executing ```docker run -p 8000:8000 -d jcremerius/orion:latest```. After that, a docker container is created and shall run. The application can be accessed via a webbrowser under the following address [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 
-## Conda Setup
+## Anaconda Setup
 
-
+Alternatively, it is possible to setup the tool without docker locally using Anaconda. Install [Anaconda](https://anaconda.org/) and run the following command in this folder: ```conda env create --name env --file=environment_packages.yml```. Then, replace the pm4py package in the environment with the pm4py package included in this repository. After that, activate the enviroment by executing ```conda activate env``` and run the django server in the orion folder with: ```python manage.py runserver 0.0.0.0:8000 --insecure```. The application is then accessible via webbrwoser under the following address: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ## Tool Usage + Video
