@@ -39,10 +39,15 @@ The transformed process model with a path filter of 0.2 is illustrated below.
 |:--:| 
 | *Context-Aware Activity Transformation: Transformed Sepsis Process Model* |
 
+## Detect Change Patterns and Relationships between Change Patterns
 
+These two steps do not need any user interaction, which take around 5 minutes in total for Sepsis. What happens in the background can be read in the respective paper [3,4].
 
 
 [1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
 
 
 [2] Cremerius, J., Weske, M.: Context-aware change pattern detection in event attributes of recurring activities. In: Cabanillas, C., Perez, F. (eds.) Intelligent Information Systems. pp. 1–8. Springer International Publishing, Cham (2023)
+
+
+[3] Cremerius, J., Weske, M.: Change detection in dynamic event attributes. In: Di Ciccio, C., Dijkman, R., del R ́ıo Ortega, A., Rinderle-Ma, S. (eds.) Business Process Management Forum. pp. 157–172. Springer International Publishing, Cham (2022)
