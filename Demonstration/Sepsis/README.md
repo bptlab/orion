@@ -51,3 +51,6 @@ These two steps do not need any user interaction, which take around 5 minutes in
 
 
 [3] Cremerius, J., Weske, M.: Change detection in dynamic event attributes. In: Di Ciccio, C., Dijkman, R., del R ́ıo Ortega, A., Rinderle-Ma, S. (eds.) Business Process Management Forum. pp. 157–172. Springer International Publishing, Cham (2022)
+
+
+[4] Cremerius, J., Weske, M.: Relationships between change patterns in dynamic event attributes. In: Business Process Management Workshops (accepted, not published). Springer International Publishing (2023)
