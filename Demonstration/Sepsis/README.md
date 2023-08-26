@@ -51,6 +51,18 @@ This is the exploration part of the tool. To explore detected change patterns, w
 |:--:| 
 | *Heatmap for change pattern exploration* |
 
+
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Hist.JPG)|
+|:--:| 
+| *Histogram of selected change pattern* |
+
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/final_pm.JPG)|
+|:--:| 
+| *Process model enhanced with change patterns in CRP* |
+
+
 ## References
 
 [1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
