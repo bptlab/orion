@@ -12,7 +12,7 @@ After uploading the event log, the user arrives at the main page to perform the 
 
 ## Detect Dynamic Event Attributes
 
-The detection of dynamic event attributes is done automatically. However, additional classification of dynamic event attributes is required, as the change detection needs to separate between continuous and categorical event attributes. We implemented a heuristic for that, which requires a user-defined threshold. We allow the user to set that and edit the classification, if a misclassification took place. This is shown in the image below, where the slider determines the threshold and the attributes can be clicked to switch the attribute classification. A detailed description of the deteciton algorithms can be found is the paper [1].
+The detection of dynamic event attributes is done automatically. However, additional classification of dynamic event attributes is required, as the change detection needs to separate between continuous and categorical event attributes. We implemented a heuristic for that, which requires a user-defined threshold. We allow the user to set that and edit the classification, if a misclassification took place. This is shown in the image below, where the slider determines the threshold and the attributes can be clicked to switch the attribute classification. A detailed description of the deteciton algorithms can be found is the respective paper [1].
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Detect_DEA.JPG)|
 |:--:| 
@@ -26,6 +26,4 @@ The detection of dynamic event attributes is done automatically. However, additi
 
 
 
-[1] Cremerius, J., Weske, M.: Supporting domain data selection in data-
-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3
-(2022)
+[1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
