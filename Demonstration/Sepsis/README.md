@@ -16,14 +16,25 @@ The detection of dynamic event attributes is done automatically. However, additi
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Detect_DEA.JPG)|
 |:--:| 
-| *Dynamic Event Attribute Detection Page*
+| *Dynamic Event Attribute Detection Page* |
 
 
-## Apply 
+## Apply Context-Aware Activitiy Transformation
 
+This feature is especially useful for Sepsis, as the measurement activities (CRP and Leucocytes) are recurring activities in the event log. This features allows to put these activities into their respective context, which is before or after other activities. A detailed description can be found again in the respective paper [2]. First, recurring activities can be selected based on a repetition score, which is shown behind the activity names.
 
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Context_1.JPG)|
+|:--:| 
+| *Context-Aware Activity Transformation: Selection of recurring activities* |
+
+After the selection of recurring activities (in this case CRP, Leucocytes, and LacticAcid), the user needs to choose how the activities should be transformed.
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Context_2.JPG)|
+|:--:| 
+| *Context-Aware Activity Transformation: Selection of context for recurring activities* |
 
 
 
 
 [1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
+[2] Cremerius, J., Weske, M.: Context-aware change pattern detection in event attributes of recurring activities. In: Cabanillas, C., Perez, F. (eds.) Intelligent Information Systems. pp. 1–8. Springer International Publishing, Cham (2023)
