@@ -4,4 +4,10 @@ This page demonstrates orion by analyzing the [Sepsis](https://data.4tu.nl/artic
 
 ## Main Page
 
-After uploading the event log, the user arrives at the main page to perform the data-preprocessing and analysis steps described in the paper.
+After uploading the event log, the user arrives at the main page to perform the data-preprocessing and analysis steps described in the paper. On the left hand side, a discovered process model is displayed. On the right hand side, a navigation bar is present, which give access to the featurees of orion.
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/landing_page.PNG)|
+|:--:| 
+| *Orion Main Page after uploading the event log* |
+
+## Detect Dynamic Event Attributes
