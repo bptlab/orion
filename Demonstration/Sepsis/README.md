@@ -47,6 +47,7 @@ These two steps do not need any user interaction, which take around 5 minutes in
 
 This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns.
 
+## References
 
 [1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
 
