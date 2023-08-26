@@ -33,6 +33,12 @@ After the selection of recurring activities (in this case CRP, Leucocytes, and L
 |:--:| 
 | *Context-Aware Activity Transformation: Selection of context for recurring activities* |
 
+The transformed process model with a path filter of 0.2 is illustrated below.
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Context_PM.JPG)|
+|:--:| 
+| *Context-Aware Activity Transformation: Transformed Sepsis Process Model* |
+
 
 
 
