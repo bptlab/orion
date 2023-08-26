@@ -27,7 +27,7 @@ This feature is especially useful for Sepsis, as the measurement activities (CRP
 |:--:| 
 | *Context-Aware Activity Transformation: Selection of recurring activities* |
 
-After the selection of recurring activities (in this case CRP, Leucocytes, and LacticAcid), the user needs to choose how the activities should be transformed.
+After the selection of recurring activities (in this case CRP, Leucocytes, and LacticAcid), the user needs to choose how the activities should be transformed. Again, we provide a threshold to determine that semi-automatically, which is the bar at the top. Below, the activities are shown, which will be the context for each recurring activity. For example, CRP will be tranformed to "CRP BEFORE Release A", "CRP BEFORE Release B",... and "CRP AFTER ER Sepsis Triage", "CRP AFTER Admission NC", and "CRP AFTER Admission IC". Hitting the Transform button performs the activity transformation and returns to the main page.
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Context_2.JPG)|
 |:--:| 
