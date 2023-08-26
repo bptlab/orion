@@ -43,4 +43,6 @@ The transformed process model with a path filter of 0.2 is illustrated below.
 
 
 [1] Cremerius, J., Weske, M.: Supporting domain data selection in data-enhanced process models. In: Wirtschaftsinformatik 2022 Proceedings 3 (2022)
+
+
 [2] Cremerius, J., Weske, M.: Context-aware change pattern detection in event attributes of recurring activities. In: Cabanillas, C., Perez, F. (eds.) Intelligent Information Systems. pp. 1–8. Springer International Publishing, Cham (2023)
