@@ -45,7 +45,11 @@ These two steps do not need any user interaction, which take around 5 minutes in
 
 ## Explore Change Patterns
 
-This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns.
+This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns. The figure below illustrates an example heatmap with change patterns detected in the transformed Sepsis event log.
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Matrix.PNG)|
+|:--:| 
+| *Heatmap for change pattern exploration* |
 
 ## References
 
