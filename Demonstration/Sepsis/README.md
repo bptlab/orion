@@ -11,3 +11,9 @@ After uploading the event log, the user arrives at the main page to perform the 
 | *Orion Main Page after uploading the event log* |
 
 ## Detect Dynamic Event Attributes
+
+The detection of dynamic event attributes is done automatically. However, additional classification of dynamic event attributes is required, as the change detection needs to separate between continuous and categorical event attributes. We implemented a heuristic for that, which requires a user-defined threshold. We allow the user to set that and edit the classification, if a misclassification took place. This is shown in the image below, where the slider determines the threshold and the attributes can be clicked to switch the attribute classification.
+
+|![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Detect_DEA.JPG)|
+|:--:| 
+| *Dynamic Event Attribute Detection Page*
