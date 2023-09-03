@@ -5,7 +5,7 @@ This repository provides orion, a tool to discover and explore change patterns i
 ## Setup
 
 The easiest way to setup orion is to use [docker](https://hub.docker.com/r/jcremerius/orion/tags). Just pull the image using the following command:
-```docker pull jcremerius/orion:latest``` and run it by executing ```docker run -p 8000:8000 -d jcremerius/orion:latest```. After that, a docker container is created and shall run. The application can be accessed via a webbrowser under the following address [http://127.0.0.1:8000](http://127.0.0.1:8000)
+```docker pull jcremerius/orion:latest``` and run it by executing ```docker run -p 8000:8000 -d jcremerius/orion:latest```. After that, a docker container is created and shall run. The application can be accessed via a webbrowser under the following address [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 
 ## Alternative Anaconda Setup
