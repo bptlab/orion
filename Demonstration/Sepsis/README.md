@@ -41,15 +41,17 @@ The transformed process model with a path filter of 0.2 is illustrated below.
 
 ## Detect Change Patterns and Relationships between Change Patterns
 
-These two steps do not need any user interaction, which take around 5 minutes in total for Sepsis. What happens in the background can be read in the respective papers [3,4].
+These two steps do not need any user interaction, which take around 5 minutes in total for Sepsis. What happens in the background can be read in the respective papers [3,4]. Please be aware, that the activities in the Spesis event log only contain one dynamic event attribute. Thus, no relationships between change patterns can be identified. 
 
 ## Explore Change Patterns
 
-This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns. The figure below illustrates an example heatmap with change patterns detected in the transformed Sepsis event log.
+This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns. The figure below illustrates an example heatmap with change patterns detected in the transformed Sepsis event log. The heatmap is dynamically configurable, such that the user can define what should be shown on the respective x-, y-, and z-axis. The example shows event attributes on the x-axis and relations (in this case eventually follows relations) on the y-axis. Further, either continuous or categorical event attributes can be displayed due to their differen effect sizes. Coloured cells in the heatmap show statistical significant change patterns with their respective effect size. When hovering over cells, more details are displayed, such as the p-value, change in mean values, and sample size.
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Matrix.PNG)|
 |:--:| 
 | *Heatmap for change pattern exploration* |
+
+
 
 
 
