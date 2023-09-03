@@ -53,7 +53,7 @@ The heatmap is dynamically configurable, such that the user can define what shou
 |:--:| 
 | *Heatmap for change pattern exploration* |
 
-When clicking on one cell in the heatmap, the respective cell can be analysed in more detail. The figure below shows a histogram of the selected change patterns with its change pattern value differences. As the effect size of -0.9 indicates, most values are decreasing from "CRP AFTER Admission IC" to "CRP BEFORE Release A"
+When clicking on one cell in the heatmap, the respective cell can be analysed in more detail. The figure below shows a histogram of the selected change pattern with its change pattern value differences (the difference of the event atttribute values in the selected relation). As the effect size of -0.9 indicates, most values are decreasing from "CRP AFTER Admission IC" to "CRP BEFORE Release A".
 
 
 
@@ -61,6 +61,7 @@ When clicking on one cell in the heatmap, the respective cell can be analysed in
 |:--:| 
 | *Histogram of selected change pattern* |
 
+Further, one can illustrate selected change patterns in the process model. The process model below visualizes two change patterns. One in the eventually folows relation from "CRP AFTER ER Sepsis Triage" to "CRP AFTER Admission NC" with a positive effect size of 0.35, indicating a value increase. This is visualized by a dotted line, indicating the eventually follows relation, which is coloured in red, as the value increases. The numbers at the edges represent the average value of the event attribute in the relation. The second change pattern is a value decrease from "CRP AFTER Admission NC" to "CRP BEFORE Release A", visualized by a dotted line in blue.
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/final_pm.JPG)|
 |:--:| 
