@@ -45,13 +45,15 @@ These two steps do not need any user interaction, which take around 5 minutes in
 
 ## Explore Change Patterns
 
-This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns. The figure below illustrates an example heatmap with change patterns detected in the transformed Sepsis event log. The heatmap is dynamically configurable, such that the user can define what should be shown on the respective x-, y-, and z-axis. The example shows event attributes on the x-axis and relations (in this case eventually follows relations) on the y-axis. Further, either continuous or categorical event attributes can be displayed due to their differen effect sizes. Coloured cells in the heatmap show statistical significant change patterns with their respective effect size. When hovering over cells, more details are displayed, such as the p-value, change in mean values, and sample size.
+This is the exploration part of the tool. To explore detected change patterns, we implemented a heatmap, which illustrates slices of the OLAP cube, storing all change patterns. The figure below illustrates an example heatmap with change patterns detected in the transformed Sepsis event log. 
+
+The heatmap is dynamically configurable, such that the user can define what should be shown on the respective x-, y-, and z-axis. The example shows event attributes on the x-axis and relations (in this case eventually follows relations) on the y-axis. Further, either continuous or categorical event attributes can be displayed due to their differen effect sizes. Coloured cells in the heatmap show statistical significant change patterns with their respective effect size. When hovering over cells, more details are displayed, such as the p-value, change in mean values, and sample size.
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Matrix.PNG)|
 |:--:| 
 | *Heatmap for change pattern exploration* |
 
-
+When clicking on one cell in the heatmap, the respective cell can be analysed in more detail. The figure below shows a histogram of the selected change patterns with its change pattern value differences. As the effect size of -0.9 indicates, most values are decreasing from "CRP AFTER Admission IC" to "CRP BEFORE Release A"
 
 
 
