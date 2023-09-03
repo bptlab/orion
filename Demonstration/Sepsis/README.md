@@ -4,7 +4,7 @@ This page demonstrates orion by analyzing the [Sepsis](https://data.4tu.nl/artic
 
 ## Main Page
 
-After uploading the event log, the user arrives at the main page to perform the data-preprocessing and analysis steps described in the paper. On the left hand side, a discovered process model is displayed. On the right hand side, a navigation bar is present, which give access to the featurees of orion.
+After uploading the event log, the user arrives at the main page to perform the data-preprocessing and analysis steps described in the paper. On the left hand side, a discovered process model is displayed. On the right hand side, a navigation bar is present, which give access to the features of orion.
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/landing_page.PNG)|
 |:--:| 
@@ -12,7 +12,7 @@ After uploading the event log, the user arrives at the main page to perform the 
 
 ## Detect Dynamic Event Attributes
 
-The detection of dynamic event attributes is done automatically. However, additional classification of dynamic event attributes is required, as the change detection needs to separate between continuous and categorical event attributes. We implemented a heuristic for that, which requires a user-defined threshold. We allow the user to set that and edit the classification, if a misclassification took place. This is shown in the image below, where the slider determines the threshold and the attributes can be clicked to switch the attribute classification. A detailed description of the deteciton algorithms can be found is the respective paper [1].
+The detection of dynamic event attributes is done automatically. However, additional classification of dynamic event attributes is required, as the change detection needs to separate between continuous and categorical event attributes. We implemented a heuristic for that, which requires a user-defined threshold. We allow the user to set that and edit the classification, if a misclassification took place. This is shown in the image below, where the slider determines the threshold and the attributes can be clicked to switch the attribute classification. A detailed description of the deteciton algorithms and the user-defined threshold can be found in the respective paper [1].
 
 |![alt text](https://github.com/bptlab/orion/blob/master/Demonstration/Sepsis/Images/Detect_DEA.JPG)|
 |:--:| 
